@@ -109,7 +109,8 @@ section:first-of-type{
     padding: 4px 0;
     font-size: 1.11rem;
     font-weight: 700;
-    color: #333;
+    color: #111;
+    font-family: "Sofadi One", system-ui;
 }
 
 #score-board > div:first-child{

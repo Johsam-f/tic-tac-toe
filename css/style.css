@@ -60,6 +60,7 @@ section:first-of-type{
     background-color: #d4b90d;
     height: 35px;
     width: 35px;
+    border: none;
     border-radius: 5px; 
     transition: all 0.3s ease; 
 }

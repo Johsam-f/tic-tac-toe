@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Playwrite+IT+Moderna:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sofadi+One&display=swap');
 
 :root{
-    --primary-color: #031824;
+    --primary-color: #031824; 
     --secondary-color: #0a1729;
 }
 
@@ -28,7 +28,7 @@ section:first-of-type{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 0 0 0;
+    padding: 5px 5px 5px 0;
 }
 
 

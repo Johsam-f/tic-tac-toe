@@ -18,11 +18,11 @@ function create_game() {
     return check_win;
   }
 
-function create_board(){
-    let board = Array(9).fill(null); // making an array with 9 elements and assigning the value of null to each element
+function game_board(){
+    let board = Array(9).fill(''); // making an array with 9 elements and assigning the value of null to each element
     const get_board = () => [...board];
     const make_move = (index, symbol) =>{
-        if(board[index === null]){
+        if(board[index === '']){
             board[index] = symbol;
             return true;
         }
@@ -32,8 +32,26 @@ function create_board(){
     return {get_board, make_move}
 }
 
+// function start_game(){
+//   const board = document.getElementById("board");
+  
+//   addEventListener('mouseover', ()=>{
+//     const current_player = document.getElementById("player").innerText;
+//     current_player.toLowerCase() === 'x'? 'o' : 'x';
+//   });
+// }
 
-function start_game(){
-    
+function start_game() {
+  const board = document.getElementById("board");
+  const playerDisplay = document.getElementById("player");
 
+  board.addEventListener('click', (e) => {
+     if (e.target.classList.contains('board-box')) {
+      const currentPlayer = playerDisplay.innerText;
+      const nextPlayer = currentPlayer.toLowerCase() === 'x' ? 'O' : 'X';
+      playerDisplay.innerText = nextPlayer;
+    }
+  });
 }
+
+addEventListener('DOMContentLoaded', start_game);

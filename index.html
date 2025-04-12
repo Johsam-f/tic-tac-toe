@@ -4,8 +4,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Tic Tac Toe | the game</title>
+
+    <!-- styles -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <div class="container">
+      <!-- <header>
+        <h1>Tic Tac Toa</h1>
+      </header> -->
+      <section>
+        <span class="icon">xo</span>
+        <span class="current-player"><span id="player">x</span>'s turn</span>
+        <button class="restart"><i class="fas fa-undo"></i></button>
+      </section>
+
+      <div id="board">
+        <div class="board-box"></div>
+        <div class="board-box"></div>
+        <div class="board-box"></div>
+        <div class="board-box"></div>
+        <div class="board-box"></div>
+        <div class="board-box"></div>
+        <div class="board-box"></div>
+        <div class="board-box"></div>
+        <div class="board-box"></div>
+      </div>
+      <section id="score-board">
+        <div>
+          <p>Player X</p>
+          <p id="player-x-score">0</p>
+        </div>
+        <div>
+          <p>Ties</p>
+          <p id="ties">0</p>
+        </div>
+        <div>
+          <p>Player O</p>
+          <p id="player-o-score">0</p>
+        </div>
+      </section>
+    </div>
+
     <script defer src="js/script.js"></script>
   </body>
 </html>

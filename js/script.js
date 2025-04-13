@@ -124,6 +124,10 @@ function display_winner(winner){
     // const current_winner = document.getElementById("current-winner");
     // current_winner.innerText = winner;
     display_menu.classList.remove('hidden');
+    document.getElementById("pop_up_container").addEventListener('click', ()=>{
+      const display_menu = document.getElementById("pop_up_container");
+      display_menu.classList.add('hidden');
+    });
 }
 
 function reset_game(){
@@ -136,12 +140,15 @@ function reset_game(){
 
 document.getElementById("restart-btn").addEventListener('click', ()=>{
   reset_game();
+  const display_menu = document.getElementById("pop_up_container");
+  display_menu.innerHTML = `<p>
+                              scores resetting...
+                            </p>`;
+  display_menu.classList.remove('hidden');
+  setTimeout(() => {
+    display_menu.classList.add('hidden');
+  }, 2000);
   player_x.innerText = 0;
   player_o.innerText = 0;
   draw.innerText = 0;
-});
-
-document.getElementById("pop_up_container").addEventListener('click', ()=>{
-  const display_menu = document.getElementById("pop_up_container");
-  display_menu.classList.add('hidden');
 });

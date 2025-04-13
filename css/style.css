@@ -47,6 +47,7 @@ section:first-of-type{
     color: #d4b90d;
     font-size: 40px;
     pointer-events: none;
+    text-shadow: 5px 5px 5px #111;
 }
 
 .current-player{
@@ -67,6 +68,7 @@ section:first-of-type{
     border: none;
     border-radius: 5px; 
     cursor: pointer;
+    box-shadow: 3px 3px 5px rgba(33, 28, 28, 0.8);
     transition: all 0.3s ease; 
 }
 
@@ -117,6 +119,7 @@ section:first-of-type{
     font-size: 1.11rem;
     font-weight: 700;
     color: #111;
+    box-shadow: 3px 3px 5px rgba(33, 28, 28, 0.8);
     font-family: "Sofadi One", system-ui;
     pointer-events: none;
     transition: all 0.5s ease;
@@ -147,6 +150,7 @@ footer{
     font-style: italic;
     color: #d4b90d;
     pointer-events: none;
+    text-shadow: 5px 5px 5px #111;
 }
 
 #pop_up_container{

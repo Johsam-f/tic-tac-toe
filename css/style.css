@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Playwrite+IT+Moderna:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sofadi+One&display=swap');
 
 :root{
-    --primary-color: #031824; 
-    --secondary-color: #0a1729;
+    --primary-color: #45546d;
+    /* --secondary-color: #0a1729; */
+    --secondary-color: #041a4b;
 }
 
 *{
@@ -16,6 +17,7 @@
     width: 100vw;
     background-color: var(--primary-color);
     color: #fff;
+    position: relative;
 }
 
 .container > *{
@@ -44,16 +46,18 @@ section:first-of-type{
     font-weight: 1000;
     color: #d4b90d;
     font-size: 40px;
+    pointer-events: none;
 }
 
 .current-player{
-    border-radius: 5px;
+    border-radius: 3px;
     background-color: var(--secondary-color);
     padding: 10px;
-    box-shadow: 0px 3px 15px 5px #112;
-    border: 1px solid #333;
+    box-shadow: 3px 3px 5px rgba(33, 28, 28, 0.9);
+    /* border: 1px solid #333; */
     font-size: 1.2rem;
     font-weight: 700;
+    pointer-events: none;
 }
 
 .restart{
@@ -62,6 +66,7 @@ section:first-of-type{
     width: 35px;
     border: none;
     border-radius: 5px; 
+    cursor: pointer;
     transition: all 0.3s ease; 
 }
 
@@ -85,7 +90,8 @@ section:first-of-type{
 .board-box{
     background-color: var(--secondary-color);
     border-radius: 10px;
-    box-shadow: 0px 3px 10px 5px #112;
+    /* box-shadow: 0px 3px 10px 5px #112; */
+    box-shadow: 3px 3px 5px rgba(33, 28, 28, 0.6);
     border: 1px solid #333;
     display: flex;
     justify-content: center;
@@ -93,6 +99,7 @@ section:first-of-type{
     text-align: center;
     color: #d4b90d;
     font-size: 50px;
+    cursor: pointer;
 }
 
 #score-board{
@@ -111,6 +118,8 @@ section:first-of-type{
     font-weight: 700;
     color: #111;
     font-family: "Sofadi One", system-ui;
+    pointer-events: none;
+    transition: all 0.5s ease;
 }
 
 #score-board > div:first-child{
@@ -128,4 +137,43 @@ section:first-of-type{
 #player{
     text-transform: uppercase;
     color: #d4b90d;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    font-family: "Sofadi One", system-ui;
+    font-style: italic;
+    color: #d4b90d;
+    pointer-events: none;
+}
+
+#pop_up_container{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(3px);
+    text-align: center;
+}
+
+#pop_up_container > p{
+    font-family: "Sofadi One", system-ui;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+#current-winner{
+    color: #d4b90d;
+    font-size: 1.8rem;
+}
+
+.hidden{
+    display: none !important;
 }

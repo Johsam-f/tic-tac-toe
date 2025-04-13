@@ -28,13 +28,17 @@ function game_board(){
         }
         return false;
     };
+
+    const reset_board = ()=>{
+      board = Array(9).fill('');
+    }
     
-    return {get_board, make_move}
+    return {get_board, make_move, reset_board}
 }
 
 const board = document.getElementById("board");
 const player_display = document.getElementById("player");
-const {get_board, make_move} = game_board();
+const {get_board, make_move, reset_board} = game_board();
 const board_boxes_array = Array.from(document.querySelectorAll('.board-box'));
 const check_win = create_game();
 let player_x = document.getElementById('player-x-score');
@@ -53,12 +57,6 @@ draw.innerText = 0;
 // }
   
 
-
-  //START FROM HERE
-
-
-  // const gird_boxes_array = Array.from(document.querySelectorAll('.board-box'));
-
 board.addEventListener('click', (e) => {
   if (!e.target.classList.contains('board-box') || e.target.textContent)return;
    // const index = gridCells.indexOf(e.target);
@@ -74,17 +72,31 @@ board.addEventListener('click', (e) => {
     const winner = check_win(get_board());
     if(winner){
       if(winner.toLowerCase() === 'x' ){
-        display_winner(winner);
+        setTimeout(() => {
+          display_winner('X');
+        }, 300);
         player_x.innerText = Number(player_x.innerText) + 1;
       }else{
-        display_winner(winner);
+        display_winner('O');
         player_o.innerText = Number(player_o.innerText) + 1;
       }
 
       //code to clear the board and restart
-      reset_game();
+      setTimeout(() => {
+        reset_game();
+      }, 300);
     }else{
-
+      let counter = 0;
+      board_boxes_array.forEach((box) => {
+        if(box.textContent)counter++;
+        if(counter === 9){
+          display_winner('none');
+          draw.innerText = Number(draw.innerText) + 1;
+          setTimeout(() => {
+            reset_game();
+          }, 300);
+        }
+      });
       //code to clear the board and restart
     }
 
@@ -96,11 +108,30 @@ board.addEventListener('click', (e) => {
 );
 
 function display_winner(winner){
+  const display_menu = document.getElementById("pop_up_container");
+  if(winner === 'none'){
+    display_menu.innerHTML = 
+    `<p>
+      It is a draw!!!!
+    </p>`;
+  }else{
+    display_menu.innerHTML = 
+    `<p>
+      player <br /><span id="current-winner">${winner}</span> <br />won this round!!
+    </p>`;
+  }
 
+    // const current_winner = document.getElementById("current-winner");
+    // current_winner.innerText = winner;
+    display_menu.classList.remove('hidden');
 }
 
 function reset_game(){
-
+  player_display.innerText = 'X';
+  reset_board();
+  board_boxes_array.forEach((box) => {
+    box.textContent = ''; 
+  });
 }
 
 document.getElementById("restart-btn").addEventListener('click', ()=>{
@@ -108,4 +139,9 @@ document.getElementById("restart-btn").addEventListener('click', ()=>{
   player_x.innerText = 0;
   player_o.innerText = 0;
   draw.innerText = 0;
+});
+
+document.getElementById("pop_up_container").addEventListener('click', ()=>{
+  const display_menu = document.getElementById("pop_up_container");
+  display_menu.classList.add('hidden');
 });

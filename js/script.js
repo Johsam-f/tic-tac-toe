@@ -113,11 +113,13 @@ function display_winner(winner){
     display_menu.innerHTML = 
     `<p>
       It is a draw!!!!
+      <br /><span> tap on the screen to continue </span>
     </p>`;
   }else{
     display_menu.innerHTML = 
     `<p>
-      player <br /><span id="current-winner">${winner}</span> <br />won this round!!
+      player <br /><span id="current-winner">${winner}</span> <br />won this round!!<br />
+      <span> tap on the screen to continue </span>
     </p>`;
   }
 

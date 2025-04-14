@@ -185,6 +185,11 @@ footer{
     font-weight: 700;
 }
 
+#pop_up_container > p > span:last-child{
+    color: #999;
+    font-size: 1rem;
+}
+
 #current-winner{
     color: #d4b90d;
     font-size: 1.8rem;

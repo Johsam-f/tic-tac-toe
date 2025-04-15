@@ -13,7 +13,7 @@
 }
 
 .container{
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     background-color: var(--primary-color);
     color: #fff;
@@ -153,18 +153,6 @@ footer{
     color: #d4b90d;
     pointer-events: none;
     text-shadow: 5px 5px 5px #111;
-}
-
-.main-footer{
-    position: absolute;
-    bottom: 25px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.main-footer > p{
-    margin-left: auto;
-    margin-right: auto;
 }
 
 #pop_up_container{

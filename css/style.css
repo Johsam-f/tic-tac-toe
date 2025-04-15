@@ -213,6 +213,7 @@ footer{
     cursor: pointer;
     pointer-events: all;
     transition: all 0.3s ease;
+    box-shadow: 3px 3px 5px rgba(33, 28, 28, 0.8);
 }
 
 #mode-btn:hover{

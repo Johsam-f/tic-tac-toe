@@ -144,6 +144,8 @@ section:first-of-type{
 
 footer{
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     padding-top: 20px;
     font-family: "Sofadi One", system-ui;
@@ -155,7 +157,7 @@ footer{
 
 .main-footer{
     position: absolute;
-    bottom: 40px;
+    bottom: 25px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -197,4 +199,46 @@ footer{
 
 .hidden{
     display: none !important;
+}
+
+#mode-btn{
+    margin-top: 1rem;
+    padding: 0.4rem;
+    font-family: "Sofadi One", system-ui;
+    color: #d4b90d;
+    font-weight: 600;
+    background-color: #333;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    pointer-events: all;
+    transition: all 0.3s ease;
+}
+
+#mode-btn:hover{
+    background-color: #444;
+}
+
+#mode-btn > *{
+    animation: shake 0.5s infinite;
+}
+
+
+
+@keyframes shake {
+    0%{
+        transform: translateX(0px);
+    }
+    /* 25%{
+        transform: translateX(-2px);
+    } */
+    50%{
+        transform: translateX(2px);
+    }
+    /* 75%{
+        transform: translateX(-2px);
+    } */
+    100%{
+        transform: translateX(-2px);
+    }
 }

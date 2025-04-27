@@ -47,14 +47,7 @@ let draw = document.getElementById('ties');
 player_x.innerText = 0;
 player_o.innerText = 0;
 draw.innerText = 0;
-
-//updating the UI
-// function updateUI(){
-//   const board = get_board();
-//   board_boxes_array.forEach((board_box, index)=>{
-//     board_box.textContent = board[index];
-//   });
-// }
+let bot_player = "inactive";
 
 
 board.addEventListener('click', (e) => {
@@ -154,13 +147,21 @@ player_x.innerText = 0;
 player_o.innerText = 0;
 draw.innerText = 0;
 });
-
-const bot_activity = document.getElementById("mode-btn");
-bot_activity.addEventListener('click', ()=>{
-  const display_menu = document.getElementById("pop_up_container");
-  display_menu.innerHTML = `<p>Bot player coming soon!!!!...</p>`;
-  display_menu.classList.remove('hidden');
-  setTimeout(() => {
-  display_menu.classList.add('hidden');
-  }, 3000);
-});
+const change_player = document.getElementById("mode-btn");
+change_player.addEventListener('click', ()=>{
+  if(bot_player === 'inactive'){
+    bot_player = 'active';
+    change_player.innerHTML = `Play Against User <i class="fas fa-user"></i>`
+  }else{
+    bot_player = 'inactive';
+    change_player.innerHTML = `Play Against Bot <i class="fas fa-robot"></i>`
+  }
+})
+// change_player.addEventListener('click', ()=>{
+//   const display_menu = document.getElementById("pop_up_container");
+//   display_menu.innerHTML = `<p>Bot player coming soon!!!!...</p>`;
+//   display_menu.classList.remove('hidden');
+//   setTimeout(() => {
+//   display_menu.classList.add('hidden');
+//   }, 3000);
+// });
